@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="PostgreSQL - reservationschattanga@localhost" uuid="aed6085a-375d-443c-87b0-7f1941780896">
+    <database-info product="PostgreSQL" version="9.5.3" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.6">
+      <database id="1" name="reservationschattanga">
+        <object-id>16385</object-id>
+        <visible>1</visible>
+      </database>
+      <database id="2" name="postgres">
+        <object-id>12421</object-id>
+      </database>
+      <database id="3" name="testtest">
+        <object-id>16387</object-id>
+      </database>
+      <schema id="4" parent="1" name="public">
+        <object-id>2200</object-id>
+        <visible>1</visible>
+        <introspection-state-number>691</introspection-state-number>
+        <introspection-timestamp>2016-08-18.14:49:55.287</introspection-timestamp>
+      </schema>
+      <schema id="5" parent="1" name="pg_catalog">
+        <object-id>11</object-id>
+      </schema>
+      <schema id="6" parent="1" name="pg_toast">
+        <object-id>99</object-id>
+      </schema>
+      <schema id="7" parent="1" name="pg_temp_1">
+        <object-id>11816</object-id>
+      </schema>
+      <schema id="8" parent="1" name="pg_toast_temp_1">
+        <object-id>11817</object-id>
+      </schema>
+      <schema id="9" parent="1" name="information_schema">
+        <object-id>12129</object-id>
+      </schema>
+      <table id="10" parent="4" name="cdate">
+        <object-id>16411</object-id>
+        <state-number>690</state-number>
+      </table>
+      <table id="11" parent="4" name="creservation">
+        <object-id>16416</object-id>
+        <state-number>690</state-number>
+      </table>
+      <table id="12" parent="4" name="sequence">
+        <object-id>16429</object-id>
+        <state-number>691</state-number>
+      </table>
+      <column id="13" parent="10" name="date_id">
+        <state-number>688</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer|0</data-type>
+      </column>
+      <column id="14" parent="10" name="daydish">
+        <state-number>688</state-number>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <index id="15" parent="10" name="cdate_pkey">
+        <object-id>16414</object-id>
+        <columns>date_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="16" parent="10" name="cdate_pkey">
+        <object-id>16415</object-id>
+        <columns>date_id</columns>
+        <underlying-index>cdate_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <column id="17" parent="11" name="reservation_id">
+        <state-number>689</state-number>
+        <mandatory>1</mandatory>
+        <data-type>integer|0</data-type>
+      </column>
+      <column id="18" parent="11" name="name">
+        <state-number>689</state-number>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="19" parent="11" name="note">
+        <state-number>689</state-number>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="20" parent="11" name="number">
+        <state-number>689</state-number>
+        <data-type>integer|0</data-type>
+      </column>
+      <column id="21" parent="11" name="tel">
+        <state-number>689</state-number>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="22" parent="11" name="date">
+        <state-number>689</state-number>
+        <data-type>integer|0</data-type>
+      </column>
+      <index id="23" parent="11" name="creservation_pkey">
+        <object-id>16422</object-id>
+        <columns>reservation_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="24" parent="11" name="creservation_pkey">
+        <object-id>16423</object-id>
+        <columns>reservation_id</columns>
+        <underlying-index>creservation_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="25" parent="11" name="fk_creservation_date">
+        <object-id>16424</object-id>
+        <columns>date</columns>
+        <ref-key>~.cdate.cdate_pkey</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="26" parent="12" name="seq_name">
+        <state-number>691</state-number>
+        <mandatory>1</mandatory>
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="27" parent="12" name="seq_count">
+        <state-number>691</state-number>
+        <data-type>numeric(38)|0</data-type>
+      </column>
+      <index id="28" parent="12" name="sequence_pkey">
+        <object-id>16432</object-id>
+        <columns>seq_name</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="29" parent="12" name="sequence_pkey">
+        <object-id>16433</object-id>
+        <columns>seq_name</columns>
+        <underlying-index>sequence_pkey</underlying-index>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>

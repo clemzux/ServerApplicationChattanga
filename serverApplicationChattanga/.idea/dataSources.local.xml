@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="PostgreSQL - reservationschattanga@localhost" uuid="aed6085a-375d-443c-87b0-7f1941780896">
+      <secret-storage>master_key</secret-storage>
+      <user-name>chattanga</user-name>
+      <introspection-scope>reservationschattanga:public,pg_catalog,chattanga</introspection-scope>
+      <resolve-scope>reservationschattanga:public,chattanga</resolve-scope>
+    </data-source>
+  </component>
+</project>
