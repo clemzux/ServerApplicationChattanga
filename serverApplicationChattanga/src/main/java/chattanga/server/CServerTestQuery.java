@@ -1,6 +1,7 @@
 package chattanga.server;
 
 import chattanga.classes.CDate;
+import chattanga.classes.CReservation;
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
@@ -23,9 +24,19 @@ public class CServerTestQuery {
 
         CDate cDate = new CDate();
         cDate.setId(1);
-        cDate.setDayDish("Quelqun veut du poulet ?");
+        cDate.setDate("04/09/2016");
+        cDate.setDayDish("poulet frites");
 
-        webResource.path("dates").type(MediaType.APPLICATION_JSON).post(cDate);
+//        webResource.path("dates").type(MediaType.APPLICATION_JSON).post(cDate);
 
+        CReservation cReservation = new CReservation();
+//        cReservation.setId(1);
+        cReservation.setDate(cDate);
+        cReservation.setName("clement farge");
+        cReservation.setNote("Bord de piste au bar !!!!");
+        cReservation.setNumber(2);
+        cReservation.setTel("0689627293");
+
+        webResource.path("reservations").type(MediaType.APPLICATION_JSON).post(cReservation);
     }
 }

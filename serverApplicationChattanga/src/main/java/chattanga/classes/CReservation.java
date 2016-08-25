@@ -12,9 +12,9 @@ import java.io.Serializable;
 
 @Entity
 @NamedQueries(
-        @NamedQuery(name = CReservation.CRESERVATION_BY_ALL, query = "select date from CReservation date")
+        @NamedQuery(name = CReservation.CRESERVATION_BY_ALL, query = "select reservation from CReservation reservation")
 )
-@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, scope = CDate.class)
+@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, scope = CReservation.class)
 public class CReservation implements Serializable{
 
     @TableGenerator(name = "reservationGenerator", allocationSize = 1, initialValue = 1)
@@ -41,4 +41,29 @@ public class CReservation implements Serializable{
 
 
     //////// methods
+
+
+    public int getId() { return id; }
+
+    public void setId(int id) { this.id = id; }
+
+    public String getName() { return name; }
+
+    public void setName(String name) { this.name = name; }
+
+    public String getTel() { return tel; }
+
+    public void setTel(String tel) { this.tel = tel; }
+
+    public int getNumber() { return number; }
+
+    public void setNumber(int number) { this.number = number; }
+
+    public String getNote() { return note; }
+
+    public void setNote(String note) { this.note = note; }
+
+    public CDate getDate() { return date; }
+
+    public void setDate(CDate date) { this.date = date; }
 }

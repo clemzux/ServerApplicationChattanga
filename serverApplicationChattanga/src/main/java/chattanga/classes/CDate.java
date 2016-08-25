@@ -22,6 +22,7 @@ public class CDate implements Serializable{
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "dateGenerator")
     @Column(name = "date_id")
     private int id;
+    private String date;
     private String dayDish;
 
     public static final String CDATE_BY_ALL = "CDate.findDateAll";
@@ -39,6 +40,10 @@ public class CDate implements Serializable{
     public int getId() { return id; }
 
     public void setId(int id) { this.id = id; }
+
+    public String getDate() { return date; }
+
+    public void setDate(String date) { this.date = date; }
 
     public String getDayDish() { return dayDish; }
 
