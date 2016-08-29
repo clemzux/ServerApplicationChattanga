@@ -24,7 +24,8 @@ public class CReservation implements Serializable{
     private int id;
     private String name;
     private String tel;
-    private int number;
+    private int numberPeople;
+    private int numberDayDish;
     private String note;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
@@ -55,9 +56,13 @@ public class CReservation implements Serializable{
 
     public void setTel(String tel) { this.tel = tel; }
 
-    public int getNumber() { return number; }
+    public int getNumberPeople() { return numberPeople; }
 
-    public void setNumber(int number) { this.number = number; }
+    public void setNumberPeople(int numberPeople) { this.numberPeople = numberPeople;}
+
+    public int getNumberDayDish() { return numberDayDish; }
+
+    public void setNumberDayDish(int numberDayDish) { this.numberDayDish = numberDayDish; }
 
     public String getNote() { return note; }
 

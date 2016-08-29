@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="PostgreSQL - reservationschattanga@localhost" uuid="aed6085a-375d-443c-87b0-7f1941780896">
+    <data-source name="PostgreSQL - reservationschattanga@localhost" uuid="a6b1e7aa-9168-465b-bc1c-234338663505">
       <secret-storage>master_key</secret-storage>
       <user-name>chattanga</user-name>
-      <introspection-scope>reservationschattanga:chattanga,pg_catalog,public</introspection-scope>
-      <resolve-scope>reservationschattanga:chattanga,public</resolve-scope>
+      <introspection-scope>reservationschattanga:public,pg_catalog,chattanga</introspection-scope>
+      <resolve-scope>reservationschattanga:public,chattanga</resolve-scope>
     </data-source>
   </component>
 </project>

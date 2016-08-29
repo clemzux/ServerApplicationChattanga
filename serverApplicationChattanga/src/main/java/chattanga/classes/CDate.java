@@ -11,9 +11,11 @@ import java.io.Serializable;
  */
 
 @Entity
-@NamedQueries(
-        @NamedQuery(name = CDate.CDATE_BY_ALL, query = "select date from CDate date")
-)
+@NamedQueries({
+        @NamedQuery(name = CDate.CDATE_BY_ALL, query = "select date from CDate date"),
+        @NamedQuery(name = CDate.CDATE_BY_DATE, query = "select date from CDate date where date.date = :Pdate"),
+        @NamedQuery(name = CDate.CDATE_BY_ID, query = "select date from CDate date where date.id = :Pid")
+})
 @JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, scope = CDate.class)
 public class CDate implements Serializable{
 
@@ -24,8 +26,11 @@ public class CDate implements Serializable{
     private int id;
     private String date;
     private String dayDish;
+    private String imageIdentifier;
 
     public static final String CDATE_BY_ALL = "CDate.findDateAll";
+    public static final String CDATE_BY_DATE = "CDate.findDateByDate";
+    public static final String CDATE_BY_ID = "CDate.finDateByID";
 
 
     //////// builder
@@ -48,6 +53,10 @@ public class CDate implements Serializable{
     public String getDayDish() { return dayDish; }
 
     public void setDayDish(String dayDish) { this.dayDish = dayDish; }
+
+    public String getImageIdentifier() { return imageIdentifier; }
+
+    public void setImageIdentifier(String imageIdentifier) { this.imageIdentifier = imageIdentifier; }
 
     @Override
     public String toString() {
