@@ -3,6 +3,7 @@ package chattanga.services;
 import chattanga.dao.CCrudServiceBean;
 import chattanga.dao.ICrudService;
 import chattanga.classes.CReservation;
+import chattanga.dao.QueryParameter;
 
 import javax.persistence.EntityTransaction;
 import javax.ws.rs.*;
@@ -30,6 +31,14 @@ public class CReservationServices {
     public static List<CReservation> reservationAll(){
         return (List<CReservation>) sCrudReservation.findWithNamedQuery(CReservation.CRESERVATION_BY_ALL);
     }
+
+//    @GET
+//    @Produces("application/json")
+//    @Path("/reservations/{reservation}")
+//    public static CReservation dateByDate(@PathParam("reservation") final String pName) {
+//        return (CReservation) sCrudReservation.findWithNamedQuery(CReservation.CRESERVATION_BY_NAME,
+//                QueryParameter.with("Pname", pName).parameters()).get(0);
+//    }
 
     @PUT
     @Produces("application/json")

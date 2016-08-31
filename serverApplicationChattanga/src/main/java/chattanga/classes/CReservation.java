@@ -11,9 +11,14 @@ import java.io.Serializable;
  */
 
 @Entity
-@NamedQueries(
-        @NamedQuery(name = CReservation.CRESERVATION_BY_ALL, query = "select reservation from CReservation reservation")
-)
+@NamedQueries({
+        @NamedQuery(name = CReservation.CRESERVATION_BY_ALL, query = "select reservation from CReservation reservation"),
+        @NamedQuery(name = CReservation.CRESERVATION_BY_DATE, query = "select res from CReservation res where res.date.id = :Pdate"),
+        @NamedQuery(name = CReservation.CRESERVATION_BY_NAME, query =
+                "select r.id, r.name, r.tel, r.numberDayDish, r.numberPeople, r.note from CReservation r where r.name = :Pname"),
+        @NamedQuery(name = CReservation.CRESERVATION_BY_DATE_AND_NAME, query =
+                "select res from CReservation res where res.name = :Pname and res.date.id = :Pdate")
+})
 @JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, scope = CReservation.class)
 public class CReservation implements Serializable{
 
@@ -26,6 +31,7 @@ public class CReservation implements Serializable{
     private String tel;
     private int numberPeople;
     private int numberDayDish;
+    private String hourArrive;
     private String note;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
@@ -33,6 +39,9 @@ public class CReservation implements Serializable{
     private CDate date;
 
     public static final String CRESERVATION_BY_ALL = "CReservation.findReservationAll";
+    public static final String CRESERVATION_BY_DATE = "CReservation.findReservationByDate";
+    public static final String CRESERVATION_BY_NAME = "CReservation.findReservationByNAme";
+    public static final String CRESERVATION_BY_DATE_AND_NAME = "CReservation.findReservationByDateAndName";
 
 
     //////// builder
@@ -71,4 +80,8 @@ public class CReservation implements Serializable{
     public CDate getDate() { return date; }
 
     public void setDate(CDate date) { this.date = date; }
+
+    public String getHourArrive() { return hourArrive; }
+
+    public void setHourArrive(String hourArrive) { this.hourArrive = hourArrive; }
 }
