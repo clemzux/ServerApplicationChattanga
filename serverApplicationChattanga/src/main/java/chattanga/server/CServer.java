@@ -14,7 +14,7 @@ import java.net.URI;
 public class CServer {
 
     private static int getPort(int defaultPort) {
-        //grab port from environment, otherwise fall back to default port 9998
+        //grab port from environment, otherwise fall back to default port 9999
         String httpPort = System.getProperty("jersey.test.port");
         if (null != httpPort) {
             try {

@@ -8,6 +8,7 @@
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>chattanga.classes.CDate</class>
 		<class>chattanga.classes.CReservation</class>
+		<class>chattanga.classes.CAppVersion</class>
 
 		<properties>
 			<!-- Les paramètres de connexions -->

@@ -1,5 +1,6 @@
 package chattanga.server;
 
+import chattanga.classes.CAppVersion;
 import chattanga.classes.CDate;
 import chattanga.classes.CReservation;
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
@@ -23,26 +24,32 @@ public class CServerTestQuery {
         WebResource webResource = c.resource("http://localhost:9999/");
 
         CDate cDate1 = new CDate();
-//        cDate1.setId(1);
-        cDate1.setDate("31-08-2016");
+        cDate1.setId(1);
+        cDate1.setDate("21-09-2016");
         cDate1.setDayDish("poulet frites et sauce gras");
         cDate1.setImageIdentifier("pouletfrites");
 
         CDate cDate2 = new CDate();
-//        cDate2.setId(1);
-        cDate2.setDate("01-09-2016");
+        cDate2.setId(2);
+        cDate2.setDate("22-09-2016");
         cDate2.setDayDish("60 cm hot dog et sa sauce moutarde");
         cDate2.setImageIdentifier("hotdog");
 
         CDate cDate3 = new CDate();
-//        cDate3.setId(1);
-        cDate3.setDate("02-09-2016");
+        cDate3.setId(3);
+        cDate3.setDate("23-09-2016");
         cDate3.setDayDish("1m pizza fond tomate, et ses petits oignons crus");
         cDate3.setImageIdentifier("pizza");
 
         webResource.path("dates").type(MediaType.APPLICATION_JSON).post(cDate1);
         webResource.path("dates").type(MediaType.APPLICATION_JSON).post(cDate2);
         webResource.path("dates").type(MediaType.APPLICATION_JSON).post(cDate3);
+
+        CAppVersion av = new CAppVersion();
+        av.setId(1);
+        av.setVersionNumber(1);
+
+        webResource.path("appversions").type(MediaType.APPLICATION_JSON).post(av);
 
 //        CReservation cReservation = new CReservation();
 //        cReservation.setId(1);

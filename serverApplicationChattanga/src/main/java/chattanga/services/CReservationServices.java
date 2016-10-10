@@ -32,14 +32,6 @@ public class CReservationServices {
         return (List<CReservation>) sCrudReservation.findWithNamedQuery(CReservation.CRESERVATION_BY_ALL);
     }
 
-//    @GET
-//    @Produces("application/json")
-//    @Path("/reservations/{reservation}")
-//    public static CReservation dateByDate(@PathParam("reservation") final String pName) {
-//        return (CReservation) sCrudReservation.findWithNamedQuery(CReservation.CRESERVATION_BY_NAME,
-//                QueryParameter.with("Pname", pName).parameters()).get(0);
-//    }
-
     @PUT
     @Produces("application/json")
     public void putReservation(CReservation cReservation){

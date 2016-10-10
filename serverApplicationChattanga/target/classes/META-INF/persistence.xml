@@ -8,6 +8,7 @@
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>chattanga.classes.CDate</class>
 		<class>chattanga.classes.CReservation</class>
+		<class>chattanga.classes.CAppVersion</class>
 
 		<properties>
 			<!-- Les paramètres de connexions -->
@@ -17,8 +18,8 @@
 			<property name="javax.persistence.jdbc.user" value="chattanga"/>
 			<property name="javax.persistence.jdbc.password" value="whatthefuck"/>
 			<property name="eclipselink.ddl-generation.output-mode" value="both"/>
-			<!--<property name="eclipselink.ddl-generation" value="create-tables"/>-->
-			<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
+			<property name="eclipselink.ddl-generation" value="create-tables"/>
+			<!--<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>-->
 		</properties>
 
 	</persistence-unit>
