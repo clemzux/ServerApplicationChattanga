@@ -12,7 +12,7 @@ import java.io.Serializable;
 
 @Entity
 @NamedQueries({
-        @NamedQuery(name = CDate.CDATE_BY_ALL, query = "select date from CDate date"),
+        @NamedQuery(name = CDate.CDATE_BY_ALL, query = "select date from CDate date order by date.date"),
         @NamedQuery(name = CDate.CDATE_BY_DATE, query = "select date from CDate date where date.date = :Pdate"),
         @NamedQuery(name = CDate.CDATE_BY_ID, query = "select date from CDate date where date.id = :Pid")
 })

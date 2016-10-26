@@ -41,8 +41,14 @@ public class CDateServices {
     @Produces("application/json")
     @Path("/date/{date}")
     public static CDate dateByDate(@PathParam("date") final String date) {
-        return (CDate) sCrudDate.findWithNamedQuery(CDate.CDATE_BY_DATE,
-                QueryParameter.with("Pdate", date).parameters()).get(0);
+
+        try {
+
+            return (CDate) sCrudDate.findWithNamedQuery(CDate.CDATE_BY_DATE,
+                    QueryParameter.with("Pdate", date).parameters()).get(0);
+        }catch (Exception e) {}
+
+        return new CDate();
     }
 
     // retourne une réservation avec pour parametre la date et le nom
@@ -57,8 +63,8 @@ public class CDateServices {
     // cette requete retourne toutes les réservations a une date donnée
     @GET
     @Produces("application/json")
-    @Path("/{id}/reservations")
-    public static List<CReservation> reservationByDate(@PathParam("id") final int pDate){
+    @Path("/{date}/reservations")
+    public static List<CReservation> reservationByDate(@PathParam("date") final String pDate){
         return (List<CReservation>) sCrudReservation.findWithNamedQuery(
                 CReservation.CRESERVATION_BY_DATE, QueryParameter.with("Pdate", pDate).parameters());
     }

@@ -13,7 +13,8 @@ import java.io.Serializable;
 @Entity
 @NamedQueries({
         @NamedQuery(name = CReservation.CRESERVATION_BY_ALL, query = "select reservation from CReservation reservation"),
-        @NamedQuery(name = CReservation.CRESERVATION_BY_DATE, query = "select res from CReservation res where res.date.id = :Pdate"),
+        @NamedQuery(name = CReservation.CRESERVATION_BY_DATE, query =
+                "select res from CReservation res, CDate d where res.date.id = d.id and d.date = :Pdate"),
         @NamedQuery(name = CReservation.CRESERVATION_BY_NAME, query =
                 "select r.id, r.name, r.tel, r.numberDayDish, r.numberPeople, r.note from CReservation r where r.name = :Pname"),
         @NamedQuery(name = CReservation.CRESERVATION_BY_DATE_AND_NAME, query =
@@ -52,6 +53,20 @@ public class CReservation implements Serializable{
 
     //////// methods
 
+
+    @Override
+    public String toString() {
+        return "CReservation{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", tel='" + tel + '\'' +
+                ", numberPeople=" + numberPeople +
+                ", numberDayDish=" + numberDayDish +
+                ", hourArrive='" + hourArrive + '\'' +
+                ", note='" + note + '\'' +
+                ", date=" + date +
+                '}';
+    }
 
     public int getId() { return id; }
 
